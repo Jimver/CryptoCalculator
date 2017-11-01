@@ -16,9 +16,12 @@ install:
 script:
   - npm run lint
   - npm run build
-  - ng test --watch="false"
+  - ng test --watch="false" -cc
   - npm run e2e
   - ng build --prod --base-href CryptoCalculator
+
+after_success:
+  - codecov
 
 deploy:
   provider: pages
