@@ -1,5 +1,6 @@
 # CryptoCalculator 
 [![Build Status](https://travis-ci.org/Jimver/CryptoCalculator.svg?branch=master)](https://travis-ci.org/Jimver/CryptoCalculator)
+[![codecov](https://codecov.io/gh/Jimver/CryptoCalculator/branch/master/graph/badge.svg)](https://codecov.io/gh/Jimver/CryptoCalculator)
 
 [![Known Vulnerabilities](https://snyk.io/test/github/jimver/cryptocalculator/badge.svg)](https://snyk.io/test/github/jimver/cryptocalculator)
 [![NSP Status](https://nodesecurity.io/orgs/jimver/projects/c156ed5c-8666-4083-84c2-1cf930b9ceb6/badge)](https://nodesecurity.io/orgs/jimver/projects/c156ed5c-8666-4083-84c2-1cf930b9ceb6)
