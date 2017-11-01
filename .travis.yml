@@ -15,7 +15,7 @@ install:
   - npm install
 script:
   - npm run lint
-  - npm build
+  - npm run build
   - ng test --watch="false"
   - npm run e2e
   - ng build --prod --base-href CryptoCalculator
