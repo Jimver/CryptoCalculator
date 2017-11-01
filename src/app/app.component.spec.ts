@@ -2,7 +2,8 @@ import { TestBed, async } from '@angular/core/testing';
 import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { CalculatorComponent } from './calculator/calculator.component';
-import {ProfitcalculatorService} from './profitcalculator.service';
+import { ProfitcalculatorService } from './profitcalculator.service';
+import { DonateComponent } from './donate/donate.component';
 
 describe('AppComponent', () => {
   beforeEach(async(() => {
@@ -10,6 +11,7 @@ describe('AppComponent', () => {
       imports: [ FormsModule ],
       declarations: [
         AppComponent,
+        DonateComponent,
         CalculatorComponent
       ],
       providers: [ ProfitcalculatorService ]
