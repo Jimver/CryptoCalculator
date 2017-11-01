@@ -1,4 +1,4 @@
-# CryptoCalculator
+# CryptoCalculator [![Build Status](https://travis-ci.org/Jimver/CryptoCalculator.svg?branch=master)](https://travis-ci.org/Jimver/CryptoCalculator)
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.4.9.
 
