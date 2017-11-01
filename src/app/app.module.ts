@@ -5,11 +5,13 @@ import {FormsModule} from '@angular/forms';
 import { AppComponent } from './app.component';
 import { CalculatorComponent } from './calculator/calculator.component';
 import {ProfitcalculatorService} from './profitcalculator.service';
+import { DonateComponent } from './donate/donate.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    CalculatorComponent
+    CalculatorComponent,
+    DonateComponent
   ],
   imports: [
     BrowserModule,
