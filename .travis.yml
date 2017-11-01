@@ -18,3 +18,13 @@ script:
   - npm build
   - ng test --watch="false"
   - npm run e2e
+  - ng build --prod --base-href CryptoCalculator
+
+deploy:
+  provider: pages
+  skip_cleanup: true
+  github_token: $GH_PAGES_TOKEN
+  locl_dir: dist
+  on:
+    branch:
+      master

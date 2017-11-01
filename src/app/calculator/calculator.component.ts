@@ -7,13 +7,13 @@ import {ProfitcalculatorService} from '../profitcalculator.service';
   styleUrls: ['./calculator.component.css']
 })
 export class CalculatorComponent implements OnInit {
-  private amount: number;
-  private quick: boolean;
-  private maker: number;
-  private taker: number;
-  private low: number;
-  private high: number;
-  private profit: number;
+  amount: number;
+  quick: boolean;
+  maker: number;
+  taker: number;
+  low: number;
+  high: number;
+  profit: number;
 
   constructor(private pcService: ProfitcalculatorService) { }
 
