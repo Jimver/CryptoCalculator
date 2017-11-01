@@ -15,5 +15,6 @@ install:
   - npm install
 script:
   - npm run lint
+  - npm build
   - ng test --watch="false"
   - npm run e2e

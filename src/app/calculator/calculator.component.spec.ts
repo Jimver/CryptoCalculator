@@ -1,4 +1,6 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { FormsModule } from '@angular/forms';
+import { ProfitcalculatorService } from '../profitcalculator.service';
 
 import { CalculatorComponent } from './calculator.component';
 
@@ -8,7 +10,9 @@ describe('CalculatorComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ CalculatorComponent ]
+      imports: [ FormsModule ],
+      declarations: [ CalculatorComponent ],
+      providers: [ ProfitcalculatorService ]
     })
     .compileComponents();
   }));
