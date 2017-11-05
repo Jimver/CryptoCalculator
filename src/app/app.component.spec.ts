@@ -2,13 +2,14 @@ import { TestBed, async } from '@angular/core/testing';
 import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { CalculatorComponent } from './calculator/calculator.component';
-import { ProfitcalculatorService } from './profitcalculator.service';
+import { ProfitcalculatorService } from './services/profitcalculator.service';
 import { DonateComponent } from './donate/donate.component';
+import {HttpClientTestingModule} from '@angular/common/http/testing';
 
 describe('AppComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      imports: [ FormsModule ],
+      imports: [ FormsModule, HttpClientTestingModule ],
       declarations: [
         AppComponent,
         DonateComponent,

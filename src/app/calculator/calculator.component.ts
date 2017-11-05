@@ -1,10 +1,14 @@
 import { Component, OnInit } from '@angular/core';
-import {ProfitcalculatorService} from '../profitcalculator.service';
+import {ProfitcalculatorService} from '../services/profitcalculator.service';
+import {Pair} from '../classes/pair';
+import {Currency} from '../classes/currency.enum';
+import {KrakenService} from '../services/kraken.service';
 
 @Component({
   selector: 'app-calculator',
   templateUrl: './calculator.component.html',
-  styleUrls: ['./calculator.component.css']
+  styleUrls: ['./calculator.component.css'],
+  providers: [KrakenService]
 })
 export class CalculatorComponent implements OnInit {
   amount: number;
@@ -15,16 +19,21 @@ export class CalculatorComponent implements OnInit {
   high: number;
   profit: number;
 
-  constructor(private pcService: ProfitcalculatorService) { }
+  constructor(private kraken: KrakenService) { }
 
   ngOnInit() {
     this.amount = 100;
     this.quick = false;
     this.maker = 0.16;
     this.taker = 0.26;
-    this.low = 5400;
-    this.high = 5500;
+    this.low = 0;
+    this.high = 0;
     this.onChange();
+    this.kraken.getLatestPrice(new Pair(Currency.XBT, Currency.EUR)).subscribe(price => {
+      this.low = price;
+      this.high = price + 100;
+      this.onChange();
+    });
   }
 
   onChange() {

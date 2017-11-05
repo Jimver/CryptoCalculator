@@ -1,8 +1,9 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { FormsModule } from '@angular/forms';
-import { ProfitcalculatorService } from '../profitcalculator.service';
+import { ProfitcalculatorService } from '../services/profitcalculator.service';
 
 import { CalculatorComponent } from './calculator.component';
+import {HttpClientTestingModule} from '@angular/common/http/testing';
 
 describe('CalculatorComponent', () => {
   let component: CalculatorComponent;
@@ -10,7 +11,7 @@ describe('CalculatorComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      imports: [ FormsModule ],
+      imports: [ FormsModule, HttpClientTestingModule ],
       declarations: [ CalculatorComponent ],
       providers: [ ProfitcalculatorService ]
     })
