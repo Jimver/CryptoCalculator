@@ -5,15 +5,19 @@ import { CalculatorComponent } from './calculator/calculator.component';
 import { ProfitcalculatorService } from './services/profitcalculator.service';
 import { DonateComponent } from './donate/donate.component';
 import {HttpClientTestingModule} from '@angular/common/http/testing';
+import {MaterialModule} from './material/material.module';
+import {SidenavComponent} from './sidenav/sidenav.component';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
 describe('AppComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      imports: [ FormsModule, HttpClientTestingModule ],
+      imports: [ BrowserAnimationsModule, FormsModule, HttpClientTestingModule, MaterialModule ],
       declarations: [
         AppComponent,
         DonateComponent,
-        CalculatorComponent
+        CalculatorComponent,
+        SidenavComponent
       ],
       providers: [ ProfitcalculatorService ]
     }).compileComponents();

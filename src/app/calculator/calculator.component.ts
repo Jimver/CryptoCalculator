@@ -2,13 +2,14 @@ import { Component, OnInit } from '@angular/core';
 import {ProfitcalculatorService} from '../services/profitcalculator.service';
 import {Pair} from '../classes/pair';
 import {Currency} from '../classes/currency.enum';
-import {KrakenService} from '../services/kraken.service';
+import {CryptowatchService} from '../services/cryptowatch.service';
+import {Exchange} from '../classes/exchange.enum';
 
 @Component({
   selector: 'app-calculator',
   templateUrl: './calculator.component.html',
   styleUrls: ['./calculator.component.css'],
-  providers: [KrakenService]
+  providers: [CryptowatchService]
 })
 export class CalculatorComponent implements OnInit {
   amount: number;
@@ -19,7 +20,7 @@ export class CalculatorComponent implements OnInit {
   high: number;
   profit: number;
 
-  constructor(private kraken: KrakenService) { }
+  constructor(private cryptowatch: CryptowatchService) { }
 
   ngOnInit() {
     this.amount = 100;
@@ -29,7 +30,7 @@ export class CalculatorComponent implements OnInit {
     this.low = 0;
     this.high = 0;
     this.onChange();
-    this.kraken.getLatestPrice(new Pair(Currency.XBT, Currency.EUR)).subscribe(price => {
+    this.cryptowatch.getPrice(new Pair(Currency.BTC, Currency.EUR), Exchange.GDAX).subscribe(price => {
       this.low = price;
       this.high = price + 100;
       this.onChange();

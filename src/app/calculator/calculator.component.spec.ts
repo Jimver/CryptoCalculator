@@ -4,6 +4,8 @@ import { ProfitcalculatorService } from '../services/profitcalculator.service';
 
 import { CalculatorComponent } from './calculator.component';
 import {HttpClientTestingModule} from '@angular/common/http/testing';
+import {MaterialModule} from '../material/material.module';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
 describe('CalculatorComponent', () => {
   let component: CalculatorComponent;
@@ -11,7 +13,7 @@ describe('CalculatorComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      imports: [ FormsModule, HttpClientTestingModule ],
+      imports: [ BrowserAnimationsModule, FormsModule, HttpClientTestingModule, MaterialModule ],
       declarations: [ CalculatorComponent ],
       providers: [ ProfitcalculatorService ]
     })

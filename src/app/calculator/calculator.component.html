@@ -1,21 +1,35 @@
-<div>
-  <label>Amount in euro</label>
-  <input type="number" [(ngModel)]="amount" (input)="onChange()" step="0.01">
-</div>
-<div>
-    <label>Quick buy</label>
-  <input type="checkbox" [(ngModel)]="quick" (change)="onChange()">
-  <label>Maker</label>
-  <input type="number" [(ngModel)]="maker" (input)="onChange()" step="0.01">%
-  <label>Taker</label>
-  <input type="number" [(ngModel)]="taker" (input)="onChange()" step="0.01">%
-</div>
-<div>
-  <label>Low</label>
-  <input type="number" [(ngModel)]="low" (input)="onChange()" step="0.01">
-  <label>High</label>
-<input type="number" [(ngModel)]="high" (input)="onChange()" step="0.01">
-</div>
+<form class="calculator">
+  <mat-form-field class="calculator-fullwidth">
+    <input matInput type="number" placeholder="Amount in euro" [(ngModel)]="amount"
+           (input)="onChange()" step="0.01" [ngModelOptions]="{standalone: true}">
+    <mat-hint align="start">Enter total amount to buy at low price (in €)</mat-hint>
+  </mat-form-field>
 
-<label>Profit: </label><label>{{profit}}</label>
+  <mat-checkbox [(ngModel)]="quick" (change)="onChange()" [ngModelOptions]="{standalone: true}">Quick buy</mat-checkbox>
 
+  <mat-form-field class="calculator-fullwidth">
+    <input matInput type="number" placeholder="Maker fee" [(ngModel)]="maker"
+           (input)="onChange()" step="0.01" [ngModelOptions]="{standalone: true}">
+    <mat-hint align="start">Enter maker fee percentage i.e.: 0.2% = 0.2</mat-hint>
+  </mat-form-field>
+
+  <mat-form-field class="calculator-fullwidth">
+    <input matInput type="number" placeholder="Taker fee" [(ngModel)]="taker"
+           (input)="onChange()" step="0.01" [ngModelOptions]="{standalone: true}">
+    <mat-hint align="start">Enter taker fee percentage i.e.: 0.1% = 0.1</mat-hint>
+  </mat-form-field>
+
+  <mat-form-field class="calculator-fullwidth">
+    <input matInput type="number" placeholder="Low" [(ngModel)]="low"
+           (input)="onChange()" step="0.01" [ngModelOptions]="{standalone: true}">
+    <mat-hint align="start">Enter low buy price</mat-hint>
+  </mat-form-field>
+
+  <mat-form-field class="calculator-fullwidth">
+    <input matInput type="number" placeholder="High" [(ngModel)]="high"
+           (input)="onChange()" step="0.01" [ngModelOptions]="{standalone: true}">
+    <mat-hint align="start">Enter high sell price</mat-hint>
+  </mat-form-field>
+
+  <label class="mat-body-2">Profit: €{{profit}}</label>
+</form>

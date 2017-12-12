@@ -9,6 +9,7 @@ import {ProfitcalculatorService} from './services/profitcalculator.service';
 import { DonateComponent } from './donate/donate.component';
 import {MaterialModule} from './material/material.module';
 import { SidenavComponent } from './sidenav/sidenav.component';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import { SidenavComponent } from './sidenav/sidenav.component';
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     FormsModule,
     HttpClientModule,
     MaterialModule

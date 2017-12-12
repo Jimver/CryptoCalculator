@@ -1,0 +1,20 @@
+<div class="example-container" [class.example-is-mobile]="mobileQuery.matches">
+  <mat-sidenav-container class="example-sidenav-container" [style.marginTop.px]="mobileQuery.matches ? 56 : 0">
+    <mat-sidenav #snav [mode]="mobileQuery.matches ? 'over' : 'side'" [fixedInViewport]="mobileQuery.matches" fixedTopGap="56">
+      <mat-nav-list>
+        <h3>Item1</h3>
+      </mat-nav-list>
+      <app-donate></app-donate>
+    </mat-sidenav>
+
+    <mat-sidenav-content>
+      <mat-toolbar color="primary" class="example-toolbar">
+        <button mat-icon-button (click)="snav.toggle()">
+          <mat-icon>menu</mat-icon>
+        </button>
+        <h1 class="example-app-name">CryptoCalculator</h1>
+      </mat-toolbar>
+      <app-calculator></app-calculator>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+</div>
