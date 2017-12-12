@@ -7,6 +7,11 @@ import {CalculatorComponent} from '../calculator/calculator.component';
 import {FormsModule} from '@angular/forms';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {HttpClientTestingModule} from '@angular/common/http/testing';
+import {appRoutes} from '../app-routing.module';
+import {RouterTestingModule} from '@angular/router/testing';
+import {HomeComponent} from '../home/home.component';
+import {PagenotfoundComponent} from '../pagenotfound/pagenotfound.component';
+import {Router} from '@angular/router';
 
 describe('SidenavComponent', () => {
   let component: SidenavComponent;
@@ -14,10 +19,11 @@ describe('SidenavComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      imports: [BrowserAnimationsModule, HttpClientTestingModule, MaterialModule, FormsModule],
-      declarations: [ SidenavComponent, DonateComponent, CalculatorComponent ]
+      imports: [BrowserAnimationsModule, RouterTestingModule.withRoutes(appRoutes), HttpClientTestingModule, MaterialModule, FormsModule],
+      declarations: [ SidenavComponent, DonateComponent, CalculatorComponent, HomeComponent, PagenotfoundComponent ]
     })
     .compileComponents();
+    TestBed.get(Router).initialNavigation();
   }));
 
   beforeEach(() => {

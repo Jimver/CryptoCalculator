@@ -8,19 +8,27 @@ import {HttpClientTestingModule} from '@angular/common/http/testing';
 import {MaterialModule} from './material/material.module';
 import {SidenavComponent} from './sidenav/sidenav.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {appRoutes} from './app-routing.module';
+import {HomeComponent} from './home/home.component';
+import {PagenotfoundComponent} from './pagenotfound/pagenotfound.component';
+import {RouterTestingModule} from '@angular/router/testing';
+import {Router} from '@angular/router';
 
 describe('AppComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      imports: [ BrowserAnimationsModule, FormsModule, HttpClientTestingModule, MaterialModule ],
+      imports: [ BrowserAnimationsModule, RouterTestingModule.withRoutes(appRoutes), FormsModule, HttpClientTestingModule, MaterialModule ],
       declarations: [
         AppComponent,
         DonateComponent,
         CalculatorComponent,
-        SidenavComponent
+        SidenavComponent,
+        HomeComponent,
+        PagenotfoundComponent
       ],
       providers: [ ProfitcalculatorService ]
     }).compileComponents();
+    TestBed.get(Router).initialNavigation();
   }));
   it('should create the app', async(() => {
     const fixture = TestBed.createComponent(AppComponent);
@@ -36,6 +44,6 @@ describe('AppComponent', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.debugElement.nativeElement;
-    expect(compiled.querySelector('h1').textContent).toContain('CryptoCalculator');
+    expect(compiled.querySelector('.example-app-name').textContent).toContain('CryptoCalculator');
   }));
 });

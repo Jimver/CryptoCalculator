@@ -1,8 +1,18 @@
 <div class="example-container" [class.example-is-mobile]="mobileQuery.matches">
-  <mat-sidenav-container class="example-sidenav-container" [style.marginTop.px]="mobileQuery.matches ? 56 : 0">
-    <mat-sidenav #snav [mode]="mobileQuery.matches ? 'over' : 'side'" [fixedInViewport]="mobileQuery.matches" fixedTopGap="56">
+  <mat-sidenav-container class="example-sidenav-container">
+    <mat-sidenav #snav [mode]="mobileQuery.matches ? 'over' : 'side'" [fixedInViewport]="mobileQuery.matches">
       <mat-nav-list>
-        <h3>Item1</h3>
+        <mat-list-item routerLink="" routerLinkActive="active">
+          <mat-icon mat-list-icon>home</mat-icon>
+          <h4>Home</h4>
+        </mat-list-item>
+      </mat-nav-list>
+      <mat-divider></mat-divider>
+      <mat-nav-list>
+        <mat-list-item routerLink="calculator" routerLinkActive="active">
+          <mat-icon mat-list-icon>dialpad</mat-icon>
+          <h4>Calculator</h4>
+        </mat-list-item>
       </mat-nav-list>
       <app-donate></app-donate>
     </mat-sidenav>
@@ -14,7 +24,9 @@
         </button>
         <h1 class="example-app-name">CryptoCalculator</h1>
       </mat-toolbar>
-      <app-calculator></app-calculator>
+      <div [style.marginTop.px]="mobileQuery.matches ? 56 : 0" class="content">
+        <router-outlet></router-outlet>
+      </div>
     </mat-sidenav-content>
   </mat-sidenav-container>
 </div>

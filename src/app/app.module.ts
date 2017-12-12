@@ -10,20 +10,26 @@ import { DonateComponent } from './donate/donate.component';
 import {MaterialModule} from './material/material.module';
 import { SidenavComponent } from './sidenav/sidenav.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { HomeComponent } from './home/home.component';
+import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
+import {AppRoutingModule} from './app-routing.module';
 
 @NgModule({
   declarations: [
     AppComponent,
     CalculatorComponent,
     DonateComponent,
-    SidenavComponent
+    SidenavComponent,
+    HomeComponent,
+    PagenotfoundComponent
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     FormsModule,
     HttpClientModule,
-    MaterialModule
+    MaterialModule,
+    AppRoutingModule
   ],
   providers: [ProfitcalculatorService],
   bootstrap: [AppComponent]
