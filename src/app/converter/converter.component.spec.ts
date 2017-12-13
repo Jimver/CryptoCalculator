@@ -4,6 +4,7 @@ import { ConverterComponent } from './converter.component';
 import {MaterialModule} from '../material/material.module';
 import {HttpClientTestingModule} from '@angular/common/http/testing';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {FormsModule} from '@angular/forms';
 
 describe('ConverterComponent', () => {
   let component: ConverterComponent;
@@ -11,7 +12,7 @@ describe('ConverterComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      imports: [BrowserAnimationsModule, MaterialModule, HttpClientTestingModule],
+      imports: [BrowserAnimationsModule, MaterialModule, HttpClientTestingModule, FormsModule],
       declarations: [ ConverterComponent ],
     })
     .compileComponents();
