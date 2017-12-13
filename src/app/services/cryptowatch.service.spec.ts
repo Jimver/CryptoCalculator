@@ -5,6 +5,7 @@ import {Currency} from '../classes/currency.enum';
 import {Pair} from '../classes/pair';
 import {Exchange} from '../classes/exchange.enum';
 import {HttpClientTestingModule} from '@angular/common/http/testing';
+import {Cryptocurrency} from '../classes/cryptocurrency.enum';
 
 describe('CryptowatchService', () => {
   beforeEach(() => {
@@ -19,7 +20,7 @@ describe('CryptowatchService', () => {
   }));
 
   it('price should be number', inject([CryptowatchService], (service: CryptowatchService) => {
-    service.getPrice(new Pair(Currency.BTC, Currency.EUR), Exchange.GDAX).subscribe(price => {
+    service.getPrice(new Pair(Cryptocurrency.BTC, Currency.EUR), Exchange.GDAX).subscribe(price => {
       expect(price).toEqual(jasmine.any(Number));
       expect(price).toBeGreaterThan(0);
     });

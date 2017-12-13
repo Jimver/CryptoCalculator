@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import {
   MatSidenavModule, MatIconModule, MatToolbarModule, MatListModule, MatButtonModule,
-  MatInputModule, MatFormFieldModule, MatCheckboxModule
+  MatInputModule, MatFormFieldModule, MatCheckboxModule, MatSelectModule, MatOptionModule
 } from '@angular/material';
 
 @NgModule({
@@ -16,6 +16,8 @@ import {
     MatInputModule,
     MatFormFieldModule,
     MatCheckboxModule,
+    MatSelectModule,
+    MatOptionModule,
   ],
   exports: [
     MatSidenavModule,
@@ -26,6 +28,8 @@ import {
     MatInputModule,
     MatFormFieldModule,
     MatCheckboxModule,
+    MatSelectModule,
+    MatOptionModule,
   ],
   declarations: []
 })

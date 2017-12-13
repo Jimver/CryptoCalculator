@@ -13,6 +13,7 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { HomeComponent } from './home/home.component';
 import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
 import {AppRoutingModule} from './app-routing.module';
+import { ConverterComponent } from './converter/converter.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import {AppRoutingModule} from './app-routing.module';
     DonateComponent,
     SidenavComponent,
     HomeComponent,
-    PagenotfoundComponent
+    PagenotfoundComponent,
+    ConverterComponent
   ],
   imports: [
     BrowserModule,

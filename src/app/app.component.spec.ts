@@ -13,6 +13,7 @@ import {HomeComponent} from './home/home.component';
 import {PagenotfoundComponent} from './pagenotfound/pagenotfound.component';
 import {RouterTestingModule} from '@angular/router/testing';
 import {Router} from '@angular/router';
+import {ConverterComponent} from './converter/converter.component';
 
 describe('AppComponent', () => {
   beforeEach(async(() => {
@@ -22,6 +23,7 @@ describe('AppComponent', () => {
         AppComponent,
         DonateComponent,
         CalculatorComponent,
+        ConverterComponent,
         SidenavComponent,
         HomeComponent,
         PagenotfoundComponent

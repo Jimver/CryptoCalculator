@@ -6,15 +6,20 @@
           <mat-icon mat-list-icon>home</mat-icon>
           <h4>Home</h4>
         </mat-list-item>
-      </mat-nav-list>
-      <mat-divider></mat-divider>
-      <mat-nav-list>
-        <mat-list-item routerLink="calculator" routerLinkActive="active">
+        <mat-divider></mat-divider>
+        <mat-list-item routerLink="/calculator" routerLinkActive="active">
           <mat-icon mat-list-icon>dialpad</mat-icon>
           <h4>Calculator</h4>
         </mat-list-item>
+        <mat-list-item routerLink="/converter" routerLinkActive="active">
+          <mat-icon mat-list-icon>compare_arrows</mat-icon>
+          <h4>Converter</h4>
+        </mat-list-item>
+        <mat-divider></mat-divider>
+        <div class="donate">
+          <app-donate></app-donate>
+        </div>
       </mat-nav-list>
-      <app-donate></app-donate>
     </mat-sidenav>
 
     <mat-sidenav-content>

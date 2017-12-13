@@ -4,6 +4,7 @@ import {Pair} from '../classes/pair';
 import {Currency} from '../classes/currency.enum';
 import {CryptowatchService} from '../services/cryptowatch.service';
 import {Exchange} from '../classes/exchange.enum';
+import {Cryptocurrency} from '../classes/cryptocurrency.enum';
 
 @Component({
   selector: 'app-calculator',
@@ -30,7 +31,7 @@ export class CalculatorComponent implements OnInit {
     this.low = 0;
     this.high = 0;
     this.onChange();
-    this.cryptowatch.getPrice(new Pair(Currency.BTC, Currency.EUR), Exchange.GDAX).subscribe(price => {
+    this.cryptowatch.getPrice(new Pair(Cryptocurrency.BTC, Currency.EUR), Exchange.GDAX).subscribe(price => {
       this.low = price;
       this.high = price + 100;
       this.onChange();

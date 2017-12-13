@@ -12,6 +12,7 @@ import {RouterTestingModule} from '@angular/router/testing';
 import {HomeComponent} from '../home/home.component';
 import {PagenotfoundComponent} from '../pagenotfound/pagenotfound.component';
 import {Router} from '@angular/router';
+import {ConverterComponent} from '../converter/converter.component';
 
 describe('SidenavComponent', () => {
   let component: SidenavComponent;
@@ -20,7 +21,7 @@ describe('SidenavComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       imports: [BrowserAnimationsModule, RouterTestingModule.withRoutes(appRoutes), HttpClientTestingModule, MaterialModule, FormsModule],
-      declarations: [ SidenavComponent, DonateComponent, CalculatorComponent, HomeComponent, PagenotfoundComponent ]
+      declarations: [ SidenavComponent, DonateComponent, CalculatorComponent, ConverterComponent, HomeComponent, PagenotfoundComponent ]
     })
     .compileComponents();
     TestBed.get(Router).initialNavigation();
