@@ -19,21 +19,17 @@ export class ConverterComponent implements OnInit {
   selectedLeft: string;
   selectedRight: string;
   selectedExchange: string;
-  input: number;
+  source: number;
   converted: number;
 
   constructor(private converterService: ConverterService) {
   }
 
   ngOnInit() {
-    this.input = 10;
+    this.source = 1;
     this.selectedLeft = Cryptocurrency.BTC.toUpperCase();
     this.selectedRight = Currency.EUR.toUpperCase();
     this.selectedExchange = Exchange.GDAX.toUpperCase();
-    this.calculate();
-  }
-
-  onChange() {
     this.calculate();
   }
 
@@ -56,13 +52,22 @@ export class ConverterComponent implements OnInit {
     } else {
       pair = new Pair(left, right);
     }
+    console.log(this.selectedExchange);
+    this.converterService.convert(pair, Exchange[this.selectedExchange], this.source, !leftiscur)
+      .subscribe(result => {
+        console.log(this.selectedExchange);
+        console.log(result);
+        this.converted = result;
+      });
+  }
 
-    this.converterService.convert(pair, Exchange[this.selectedExchange], this.input, !leftiscur)
-      .subscribe(result => this.converted = result);
+  onChange() {
+    console.log('uu');
+    this.calculate();
   }
 
   swap() {
-    this.input = this.converted;
+    this.source = this.converted;
     const tempcur = this.selectedLeft;
     this.selectedLeft = this.selectedRight;
     this.selectedRight = tempcur;

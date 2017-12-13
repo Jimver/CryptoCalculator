@@ -1,6 +1,6 @@
 <form>
   <mat-form-field>
-    <mat-select [(value)]="selectedLeft" (change)="onChange()">
+    <mat-select [(value)]="selectedLeft" (valueChange)="onChange()">
       <mat-option *ngFor="let cur of select1" [value]="cur">
         {{cur}}
       </mat-option>
@@ -8,21 +8,21 @@
   </mat-form-field>
   <button mat-icon-button (click)="swap()"><mat-icon>swap_horiz</mat-icon></button>
   <mat-form-field>
-    <mat-select [(value)]="selectedRight" (change)="onChange()">
+    <mat-select [(value)]="selectedRight" (valueChange)="onChange()">
       <mat-option *ngFor="let cur of select2" [value]="cur">
         {{cur}}
       </mat-option>
     </mat-select>
   </mat-form-field>
   <mat-form-field>
-    <mat-select [(value)]="selectedExchange" (change)="onChange()">
+    <mat-select [(value)]="selectedExchange" (valueChange)="onChange()">
       <mat-option *ngFor="let ex of exchanges" [value]="ex">
         {{ex}}
       </mat-option>
     </mat-select>
   </mat-form-field>
   <mat-form-field>
-    <input matInput type="number" placeholder="Amount in coin" [(value)]="input" (input)="onChange()">
+    <input matInput type="number" placeholder="Amount in coin" [(ngModel)]="source" (input)="onChange()" [ngModelOptions]="{standalone: true}">
   </mat-form-field>
   <p>Result: {{converted}}</p>
 </form>
