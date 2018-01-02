@@ -27,7 +27,7 @@ deploy:
   provider: pages
   skip_cleanup: true
   github_token: $GH_PAGES_TOKEN
-  local_dir: dist
+  local_dir: ${TRAVIS_BUILD_DIR}/dist
   fqdn: cryptocalculator.jimver.nl
   on:
     branch:
