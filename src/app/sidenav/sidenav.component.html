@@ -24,10 +24,10 @@
 
     <mat-sidenav-content>
       <mat-toolbar color="primary" class="example-toolbar">
-        <button mat-icon-button (click)="snav.toggle()">
+        <button mat-icon-button (click)="snav.toggle()" matTooltip="Toggle sidebar">
           <mat-icon>menu</mat-icon>
         </button>
-        <h1 class="example-app-name">CryptoCalculator</h1>
+        <h1 class="example-app-name" matTooltip="lol">CryptoCalculator</h1>
       </mat-toolbar>
       <div [style.marginTop.px]="mobileQuery.matches ? 56 : 0" class="content">
         <router-outlet></router-outlet>
