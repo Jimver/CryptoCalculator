@@ -15,17 +15,29 @@ script:
   - npm run build
   - npm run coverage
   - npm run e2e
-  - ng build --prod --base-href CryptoCalculator
+  - ng build --prod
 
 after_success:
   - codecov
 
-deploy:
-  provider: pages
-  skip_cleanup: true
-  github_token: $GH_PAGES_TOKEN
-  local_dir: ${TRAVIS_BUILD_DIR}/dist
-  fqdn: cryptocalculator.jimver.nl
+before_deploy:
+  - npm install netlify-cli -g
+  - npm run build
   on:
-    branch:
-      master
+    branch: master
+
+#deploy:
+#  provider: pages
+#  skip_cleanup: true
+#  github_token: $GH_PAGES_TOKEN
+#  local_dir: ${TRAVIS_BUILD_DIR}/dist
+#  fqdn: cryptocalculator.jimver.nl
+#  on:
+#    branch: master
+
+deploy:
+  provider: script
+    script: netlify deploy -s $NETLIFY_SITE_ID -t $NETLIFY_ACCESS_TOKEN -p ./dist
+    skip_cleanup: true
+    on:
+      branch: master
