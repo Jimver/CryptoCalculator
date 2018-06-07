@@ -24,8 +24,6 @@ after_success:
 before_deploy:
   - npm install netlify-cli -g
   - npm run build
-  on:
-    branch: master
 
 deploy:
   provider: script
