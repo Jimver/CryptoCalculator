@@ -3,7 +3,6 @@ addons:
   chrome: stable
 language: node_js
 nodejs:
-  - "node"
   - "lts/*"
 before_script:
   - export DISPLAY=:99.0
