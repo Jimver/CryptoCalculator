@@ -26,15 +26,6 @@ before_deploy:
   on:
     branch: master
 
-#deploy:
-#  provider: pages
-#  skip_cleanup: true
-#  github_token: $GH_PAGES_TOKEN
-#  local_dir: ${TRAVIS_BUILD_DIR}/dist
-#  fqdn: cryptocalculator.jimver.nl
-#  on:
-#    branch: master
-
 deploy:
   provider: script
     script: netlify deploy -s $NETLIFY_SITE_ID -t $NETLIFY_ACCESS_TOKEN -p ./dist
